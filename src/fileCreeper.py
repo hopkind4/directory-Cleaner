@@ -3,11 +3,14 @@ import shutil
 from random import randint
 root = r"/home/dthops/FileCleaner/Test Files"
 
+path = root + r"/Collected Items"
+os.mkdir(path)
+
 folder = "level"
 path = root
 counter = 0
 
-arr = (".csv",".jpg",".doc",".png",".txt",".pdf",".docx",".mp3",".ai",".psd",".py",".ppt",".pps",".pptx",".xls",".xlsx")
+arr = (".csv",".jpg",".doc",".png",".txt",".pdf",".docx",".mp3",".ai",".psd",".py",".ppt",".pps",".pptx",".xls",".xlsx",".c")
 
 
 for (root,dirs,files) in os.walk(path, topdown=True): 
@@ -20,7 +23,3 @@ for (root,dirs,files) in os.walk(path, topdown=True):
             shutil.move(root+ r"/"+ fileName,folderPath)
         elif(fileName.endswith(arr)):
             shutil.move(root+ r"/"+ fileName,folderPath)
-
-    #print (dirs) 
-    #print (files) 
-
